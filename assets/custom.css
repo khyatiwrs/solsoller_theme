@@ -46,7 +46,7 @@
     text-decoration: none;
     color: #000; /* optional */
     padding-bottom: 4px; /* space for underline */
-    text-transform: inherit;
+    text-transform: inherit !important;
   }
   
   .mega-menu__link::after {
