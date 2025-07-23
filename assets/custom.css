@@ -23,7 +23,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 2px;
+    height: 1px;
     width: 0;
     background-color: #000; /* underline color */
     transition: width 0.3s ease-in-out;
@@ -46,7 +46,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 2px;
+    height: 1px;
     width: 0;
     background-color: #000; /* underline color */
     transition: width 0.3s ease-in-out;
