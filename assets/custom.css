@@ -10,6 +10,14 @@
   .mega-menu__link-title{
     font-size: 14px;
   }
+  .menu-list__link-title {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000; /* optional */
+    padding-bottom: 4px; /* space for underline */
+  }
+  
   .menu-list__link-title::before {
     content: '';
     position: absolute;
