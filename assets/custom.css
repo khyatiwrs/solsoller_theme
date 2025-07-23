@@ -32,3 +32,26 @@
   .menu-list__link-title:hover::after {
     width: 100%;
   }
+
+  .mega-menu__link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000; /* optional */
+    padding-bottom: 4px; /* space for underline */
+  }
+  
+  .mega-menu__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #000; /* underline color */
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .mega-menu__link:hover::after {
+    width: 100%;
+  }
