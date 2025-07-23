@@ -18,17 +18,17 @@
     padding-bottom: 4px; /* space for underline */
   }
   
-  .menu-list__link-title::before {
+  .menu-list__link-title::after {
     content: '';
     position: absolute;
-    bottom: 0;
     left: 0;
-    width: 0%;
+    bottom: 0;
     height: 2px;
-    background-color: #000;
+    width: 0;
+    background-color: #000; /* underline color */
     transition: width 0.3s ease-in-out;
   }
   
-  li:hover::before {
+  .menu-list__link-title:hover::after {
     width: 100%;
   }
