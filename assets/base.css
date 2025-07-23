@@ -4117,7 +4117,6 @@ text-component {
   box-shadow: none;
 }
 
-[data-menu-grid-id="MegaMenuList-2"] {
-  --menu-columns-desktop: 4;
+.mega-menu__grid[data-menu-grid-id="MegaMenuList-2"]{  --menu-columns-desktop: 4;
   --menu-columns-tablet:3
 }
