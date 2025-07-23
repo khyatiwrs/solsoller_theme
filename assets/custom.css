@@ -2,7 +2,9 @@
 .mega-menu__grid[data-menu-grid-id="MegaMenuList-2"]{  --menu-columns-desktop: 4;
     --menu-columns-tablet:3
   }
-
+  .menu-list__list-item{
+    margin-right: 5px;
+  }
   .mega-menu__link--parent .mega-menu__link-title{
     font-size: 16px !important;
     font-weight: 600 ;
