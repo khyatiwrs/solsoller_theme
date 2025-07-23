@@ -29,6 +29,9 @@
     transition: width 0.3s ease-in-out;
     color: #000;
     font-weight: 600;
+    .mega-menu__link-title{
+        font-weight: 600; 
+    }
   }
 
   
