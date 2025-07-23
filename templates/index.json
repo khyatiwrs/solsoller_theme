@@ -87,7 +87,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/OPTIMIZE_BACKUP_PRODUCT_Diseno_sin_titulo_37_copy.png",
+        "image_1": "shopify://shop_images/depositphotos_606573158-stock-photo-beauty-products-make-products-pink.webp",
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -103,7 +103,7 @@
         "section_height": "large",
         "section_height_custom": 60,
         "color_scheme": "scheme-5",
-        "toggle_overlay": true,
+        "toggle_overlay": false,
         "overlay_color": "#00000075",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
