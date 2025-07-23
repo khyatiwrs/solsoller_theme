@@ -70,6 +70,6 @@
     padding-bottom: 0px;
   }
   .hero{
-    --hero-min-height:500px;
-    min-height:500px
+    --hero-min-height:500px !important;
+    min-height:500px !important
   }
