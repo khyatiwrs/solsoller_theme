@@ -2,3 +2,10 @@
 .mega-menu__grid[data-menu-grid-id="MegaMenuList-2"]{  --menu-columns-desktop: 4;
     --menu-columns-tablet:3
   }
+
+  .mega-menu__link--parent .mega-menu__link-title{
+    font-size: 16px !important;
+  }
+  .mega-menu__link-title{
+    font-size: 14px;
+  }
