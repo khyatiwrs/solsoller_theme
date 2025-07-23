@@ -62,3 +62,7 @@
   .mega-menu__link:hover::after {
     width: 100%;
   }
+  .header__columns{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
