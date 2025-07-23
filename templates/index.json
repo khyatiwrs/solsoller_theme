@@ -348,6 +348,9 @@
       "block_order": [
         "ai_gen_block_33dcd0e_JKd7nW"
       ],
+      "custom_css": [
+        ".section-content-wrapper.section-content-wrapper {min-height: inherit;}"
+      ],
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
