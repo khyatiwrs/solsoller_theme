@@ -5,6 +5,7 @@
 
   .mega-menu__link--parent .mega-menu__link-title{
     font-size: 16px !important;
+    font-weight: 600 ;
   }
   .mega-menu__link-title{
     font-size: 14px;
