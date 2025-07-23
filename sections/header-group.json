@@ -17,7 +17,7 @@
         "announcement_8qp7qj": {
           "type": "_announcement",
           "settings": {
-            "text": "Free Shipping on Domestic Orders of $100.00 or more",
+            "text": "<strong>Free Shipping on Domestic Orders of $100.00 or more</strong>",
             "link": "",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
@@ -35,7 +35,7 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-2db02b06-67e8-437d-b87b-c7c3cced6b76",
         "divider_width": 0,
         "padding-block-start": 15,
         "padding-block-end": 15
