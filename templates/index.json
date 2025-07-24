@@ -1706,8 +1706,8 @@
         "feature_UPYNXh": {
           "type": "feature",
           "settings": {
-            "position": "left",
-            "icon": "star",
+            "position": "right",
+            "icon": "zap",
             "title": "Premium Quality",
             "description": "Crafted with care and precision."
           }
@@ -1715,7 +1715,7 @@
         "feature_B3DAzT": {
           "type": "feature",
           "settings": {
-            "position": "left",
+            "position": "right",
             "icon": "star",
             "title": "Premium Quality",
             "description": "Crafted with care and precision."
@@ -1748,10 +1748,11 @@
       ],
       "name": "Product Showcase",
       "settings": {
+        "hero_image": "shopify://shop_images/OPTIMIZE_BACKUP_PRODUCT_Diseno_sin_titulo_16_copy.jpg",
         "image_border_radius": 16,
         "background_color": "#ffffff",
-        "icon_background_color": "#000f9f",
-        "icon_color": "#ffffff",
+        "icon_background_color": "#dedede",
+        "icon_color": "#000000",
         "title_color": "#000000",
         "description_color": "#666666",
         "icon_size": 50,
