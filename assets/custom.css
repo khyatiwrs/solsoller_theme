@@ -157,3 +157,6 @@
   .ui-test-product-list , .ui-test-collection-list{
     background-color: #fffafc;
   }
+  .showcase-heading{
+    padding-bottom: 30px
+  }
