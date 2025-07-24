@@ -20,7 +20,10 @@
     }
 }
 
-
+.mega-menu__link{
+    justify-content: center;
+    align-items: center;
+ } 
   .mega-menu__link img{
     max-width: 100px !important;
   }
