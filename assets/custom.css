@@ -6,7 +6,7 @@
     margin-right: 10px;
   }
   .mega-menu__link img{
-    max-width: 200px !important;
+    max-width: 100px !important;
   }
   .mega-menu__link--parent .mega-menu__link-title{
     font-size: 16px !important;
