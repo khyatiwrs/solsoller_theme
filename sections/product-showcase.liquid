@@ -154,7 +154,7 @@
     <div class="ai-product-showcase-features-left">
       {% for feature in section.blocks %}
         {% if feature.settings.position == 'left' %}
-          {% render 'feature-item', feature: feature %}
+          {% render 'feature-item', feature: feature, section: section %}
         {% endif %}
       {% endfor %}
     </div>
@@ -179,7 +179,7 @@
     <div class="ai-product-showcase-features-right">
       {% for feature in section.blocks %}
         {% if feature.settings.position == 'right' %}
-          {% render 'feature-item', feature: feature %}
+          {% render 'feature-item', feature: feature, section: section %}
         {% endif %}
       {% endfor %}
     </div>
