@@ -1306,118 +1306,6 @@
         "padding-block-end": 20
       }
     },
-    "section_cTUNrX": {
-      "type": "section",
-      "blocks": {
-        "text_qYTgbQ": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<p><strong>Join the Mediterranean Beauty Movement</strong></p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h4",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "text_fhQbPw": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Be the first to know about new collections and special offers. </strong></p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "paragraph",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "email_signup_jWr8nE": {
-          "type": "email-signup",
-          "settings": {
-            "width": "custom",
-            "custom_width": 50,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border_style": "all",
-            "border_width": 1,
-            "border_radius": 15,
-            "input_type_preset": "paragraph",
-            "style_class": "button",
-            "display_type": "text",
-            "label": "Sign Up",
-            "integrated_button": false,
-            "button_type_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_qYTgbQ",
-        "text_fhQbPw",
-        "email_signup_jWr8nE"
-      ],
-      "name": "t:names.email_signup",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-2",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 40,
-        "padding-block-end": 20
-      }
-    },
     "17532699668424192b": {
       "type": "_blocks",
       "blocks": {
@@ -1459,6 +1347,81 @@
         "ai_gen_block_33dcd0e_jbKLPM"
       ],
       "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "1753360044ac4b8642": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a22a70b_fCCJWn": {
+          "type": "ai_gen_block_a22a70b",
+          "settings": {
+            "hero_image": "shopify://shop_images/OPTIMIZE_BACKUP_PRODUCT_Palm_D_Or_Collection_Post_8_2x_74d77797-a64e-4f71-85f2-fa0d690e2f47.png",
+            "image_border_radius": 16,
+            "background_color": "#ffffff",
+            "icon_background_color": "#dedede",
+            "icon_color": "#000000",
+            "title_color": "#000000",
+            "description_color": "#666666",
+            "icon_size": 50,
+            "title_size": 18,
+            "description_size": 14,
+            "feature_left_1_enabled": true,
+            "feature_left_1_icon": "star",
+            "feature_left_1_title": "Premium Quality",
+            "feature_left_1_description": "Crafted with the finest materials for lasting durability and comfort.",
+            "feature_left_2_enabled": true,
+            "feature_left_2_icon": "shield",
+            "feature_left_2_title": "Secure & Safe",
+            "feature_left_2_description": "Built with safety in mind, meeting all industry standards and regulations.",
+            "feature_left_3_enabled": true,
+            "feature_left_3_icon": "heart",
+            "feature_left_3_title": "Customer Loved",
+            "feature_left_3_description": "Trusted by thousands of satisfied customers worldwide.",
+            "feature_right_1_enabled": true,
+            "feature_right_1_icon": "check",
+            "feature_right_1_title": "Easy to Use",
+            "feature_right_1_description": "Simple setup and intuitive design make it perfect for everyone.",
+            "feature_right_2_enabled": true,
+            "feature_right_2_icon": "zap",
+            "feature_right_2_title": "Fast Performance",
+            "feature_right_2_description": "Lightning-fast results that exceed expectations every time.",
+            "feature_right_3_enabled": true,
+            "feature_right_3_icon": "award",
+            "feature_right_3_title": "Award Winning",
+            "feature_right_3_description": "Recognized by industry experts for innovation and excellence."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a22a70b_fCCJWn"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -1571,65 +1534,103 @@
         "padding-block-end": 0
       }
     },
-    "1753360044ac4b8642": {
-      "type": "_blocks",
+    "section_cTUNrX": {
+      "type": "section",
       "blocks": {
-        "ai_gen_block_a22a70b_fCCJWn": {
-          "type": "ai_gen_block_a22a70b",
+        "text_qYTgbQ": {
+          "type": "text",
+          "name": "t:names.heading",
           "settings": {
-            "image_border_radius": 16,
-            "background_color": "#ffffff",
-            "icon_background_color": "#dedede",
-            "icon_color": "#000000",
-            "title_color": "#000000",
-            "description_color": "#666666",
-            "icon_size": 50,
-            "title_size": 18,
-            "description_size": 14,
-            "feature_left_1_enabled": true,
-            "feature_left_1_icon": "star",
-            "feature_left_1_title": "Premium Quality",
-            "feature_left_1_description": "Crafted with the finest materials for lasting durability and comfort.",
-            "feature_left_2_enabled": true,
-            "feature_left_2_icon": "shield",
-            "feature_left_2_title": "Secure & Safe",
-            "feature_left_2_description": "Built with safety in mind, meeting all industry standards and regulations.",
-            "feature_left_3_enabled": true,
-            "feature_left_3_icon": "heart",
-            "feature_left_3_title": "Customer Loved",
-            "feature_left_3_description": "Trusted by thousands of satisfied customers worldwide.",
-            "feature_right_1_enabled": true,
-            "feature_right_1_icon": "check",
-            "feature_right_1_title": "Easy to Use",
-            "feature_right_1_description": "Simple setup and intuitive design make it perfect for everyone.",
-            "feature_right_2_enabled": true,
-            "feature_right_2_icon": "zap",
-            "feature_right_2_title": "Fast Performance",
-            "feature_right_2_description": "Lightning-fast results that exceed expectations every time.",
-            "feature_right_3_enabled": true,
-            "feature_right_3_icon": "award",
-            "feature_right_3_title": "Award Winning",
-            "feature_right_3_description": "Recognized by industry experts for innovation and excellence."
+            "text": "<p><strong>Join the Mediterranean Beauty Movement</strong></p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_fhQbPw": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Be the first to know about new collections and special offers. </strong></p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "email_signup_jWr8nE": {
+          "type": "email-signup",
+          "settings": {
+            "width": "custom",
+            "custom_width": 50,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border_style": "all",
+            "border_width": 1,
+            "border_radius": 15,
+            "input_type_preset": "paragraph",
+            "style_class": "button",
+            "display_type": "text",
+            "label": "Sign Up",
+            "integrated_button": false,
+            "button_type_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_a22a70b_fCCJWn"
+        "text_qYTgbQ",
+        "text_fhQbPw",
+        "email_signup_jWr8nE"
       ],
+      "name": "t:names.email_signup",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
+        "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
+        "gap": 16,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1641,8 +1642,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 40,
+        "padding-block-end": 20
       }
     }
   },
@@ -1652,9 +1653,9 @@
     "section_jVHgxp",
     "section_mHCKjj",
     "collection_list_zqYPbq",
-    "section_cTUNrX",
     "17532699668424192b",
+    "1753360044ac4b8642",
     "1753359407b0490f38",
-    "1753360044ac4b8642"
+    "section_cTUNrX"
   ]
 }
