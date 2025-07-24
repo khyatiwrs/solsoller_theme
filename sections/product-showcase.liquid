@@ -150,6 +150,7 @@
 {% endstyle %}
 
 <div class="ai-product-showcase" {{ section.shopify_attributes }}>
+  <div>{{ section.settings.richtext }}</div>
   <div class="ai-product-showcase-container">
     <div class="ai-product-showcase-features-left">
       {% for feature in section.blocks %}
