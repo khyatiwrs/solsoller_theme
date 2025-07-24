@@ -16,7 +16,7 @@
  } */
   .mega-menu__column--collection-image {
     @media screen and (min-width: 990px) {
-        grid-column: span 1;
+        grid-column: span 1 !important;
     }
 }
 
