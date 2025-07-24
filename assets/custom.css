@@ -80,3 +80,6 @@
   .section-resource-list__header h3{
      font-size: larger !important;
   }
+  .custom-font-size p{
+    font-weight: 600;
+  }
