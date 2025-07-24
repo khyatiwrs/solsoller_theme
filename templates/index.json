@@ -1699,6 +1699,65 @@
         "padding-block-start": 40,
         "padding-block-end": 20
       }
+    },
+    "product_showcase_d6HUgP": {
+      "type": "product-showcase",
+      "blocks": {
+        "feature_UPYNXh": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "icon": "star",
+            "title": "Premium Quality",
+            "description": "Crafted with care and precision."
+          }
+        },
+        "feature_B3DAzT": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "icon": "star",
+            "title": "Premium Quality",
+            "description": "Crafted with care and precision."
+          }
+        },
+        "feature_XTccr6": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "icon": "star",
+            "title": "Premium Quality",
+            "description": "Crafted with care and precision."
+          }
+        },
+        "feature_kTMLMg": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "icon": "star",
+            "title": "Premium Quality",
+            "description": "Crafted with care and precision."
+          }
+        }
+      },
+      "block_order": [
+        "feature_UPYNXh",
+        "feature_B3DAzT",
+        "feature_XTccr6",
+        "feature_kTMLMg"
+      ],
+      "name": "Product Showcase",
+      "settings": {
+        "image_border_radius": 16,
+        "background_color": "#ffffff",
+        "icon_background_color": "#000f9f",
+        "icon_color": "#ffffff",
+        "title_color": "#000000",
+        "description_color": "#666666",
+        "icon_size": 50,
+        "title_size": 18,
+        "description_size": 14
+      }
     }
   },
   "order": [
@@ -1710,6 +1769,7 @@
     "17532699668424192b",
     "1753360044ac4b8642",
     "1753359407b0490f38",
-    "section_cTUNrX"
+    "section_cTUNrX",
+    "product_showcase_d6HUgP"
   ]
 }
