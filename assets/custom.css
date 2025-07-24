@@ -84,6 +84,11 @@
     font-weight: 600;
     font-size: 14px;
     padding: 0px 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;     /* Show only 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
   }
   div[ref="priceContainer"] .price{
