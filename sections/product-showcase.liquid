@@ -154,7 +154,7 @@
     <div class="ai-product-showcase-features-left">
       {% for feature in section.blocks %}
         {% if feature.settings.position == 'left' %}
-          {% render 'feature-item', feature: feature, ai_gen_id: ai_gen_id %}
+          {% render 'feature-item', feature: feature %}
         {% endif %}
       {% endfor %}
     </div>
