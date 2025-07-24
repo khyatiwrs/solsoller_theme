@@ -149,7 +149,23 @@
   }
 {% endstyle %}
 
-<div class="ai-product-showcase section--page-width" {{ section.shopify_attributes }}>
+<div
+  class="
+    section
+    section--page-width
+    color-scheme-1
+    section-resource-list
+    spacing-style
+    gap-style
+    ai-product-showcase
+  "
+  style="
+    --padding-block-start: 15px;--padding-block-end: 20px;
+    --gap: 0px;
+    --resource-list-column-gap-desktop: 20px;--column-count: 4;--column-count-mobile: 1;--mobile-card-size: 60cqw;
+  "
+  {{ section.shopify_attributes }}
+>
   <div class="showcase-heading">{{ section.settings.richtext }}</div>
   <div class="ai-product-showcase-container">
     <div class="ai-product-showcase-features-left">
