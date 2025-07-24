@@ -392,7 +392,7 @@
           "type": "ai_gen_block_33dcd0e",
           "name": "Rich Text Section",
           "settings": {
-            "heading": "Welcome to our store",
+            "heading": "Community Focus",
             "description": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
             "button_text": "",
             "button_link": "",
@@ -916,7 +916,7 @@
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "center",
         "vertical_alignment": "center",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
