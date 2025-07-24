@@ -100,3 +100,20 @@
 .ui-test-product-list .resource-list__carousel slideshow-slides[gutters="start end"]{
     justify-content: center;
 }
+[data-testid="card-tags"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  [data-testid="card-tags"] > div {
+    background: #c12f27;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
