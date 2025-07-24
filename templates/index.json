@@ -502,7 +502,7 @@
               "settings": {
                 "icon": "eye",
                 "image_upload": "shopify://shop_images/OPTIMIZE_BACKUP_PRODUCT_CRUELTY_FREE_10.png",
-                "width": 70,
+                "width": 80,
                 "link": "",
                 "open_in_new_tab": false
               },
@@ -574,7 +574,7 @@
                 "text_iPTPfi": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p>Plant-based formulas that never compromise on performance</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -651,7 +651,7 @@
               "settings": {
                 "icon": "heart",
                 "image_upload": "shopify://shop_images/OPTIMIZE_BACKUP_PRODUCT_PARABEN_FREE_35751e9f-8230-4bfd-8529-be3dc9da0555.png",
-                "width": 70,
+                "width": 80,
                 "link": "",
                 "open_in_new_tab": false
               },
@@ -723,7 +723,7 @@
                 "text_jRW3w6": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We believe in building better</p>",
+                    "text": "<p>Plant-based formulas that never compromise on performance</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -800,7 +800,7 @@
               "settings": {
                 "icon": "silhouette",
                 "image_upload": "shopify://shop_images/OPTIMIZE_BACKUP_PRODUCT_VEGAN_62760ec4-d2cd-4649-8151-cc18a7c81ef7.png",
-                "width": 70,
+                "width": 80,
                 "link": "",
                 "open_in_new_tab": false
               },
@@ -847,7 +847,7 @@
                 "text_ygKjqj": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>A team with a goal</strong></p>",
+                    "text": "<p><strong>100% Vegan</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -872,7 +872,7 @@
                 "text_ihTGpt": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Real people making great products</p>",
+                    "text": "<p>Plant-based formulas that never compromise on performance</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
