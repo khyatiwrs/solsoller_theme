@@ -5,6 +5,9 @@
   .menu-list__list-item{
     margin-right: 10px;
   }
+  .mega-menu__link img{
+    max-width: 200px !important;
+  }
   .mega-menu__link--parent .mega-menu__link-title{
     font-size: 16px !important;
     font-weight: 600 ;
