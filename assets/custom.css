@@ -83,6 +83,6 @@
   .custom-font-size p{
     font-weight: 600;
   }
-  .priceContainer .price{
+  div[ref="priceContainer"] .price{
     font-weight: 600;
   }
