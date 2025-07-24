@@ -5,6 +5,11 @@
   .menu-list__list-item{
     margin-right: 10px;
   }
+  .mega-menu__column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .mega-menu__link img{
     max-width: 100px !important;
   }
