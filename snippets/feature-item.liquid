@@ -1,12 +1,12 @@
 {% assign icon = feature.settings.icon %}
-<div class="ai-product-showcase-feature-{{ ai_gen_id }}">
-  <div class="ai-product-showcase-feature-icon-{{ ai_gen_id }}">
+<div class="ai-product-showcase-feature">
+  <div class="ai-product-showcase-feature-icon">
     {% render 'icon', icon: icon %}
   </div>
-  <div class="ai-product-showcase-feature-content-{{ ai_gen_id }}">
-    <h3 class="ai-product-showcase-feature-title-{{ ai_gen_id }}">{{ feature.settings.title }}</h3>
+  <div class="ai-product-showcase-feature-content">
+    <h3 class="ai-product-showcase-feature-title">{{ feature.settings.title }}</h3>
     {% if feature.settings.description != blank %}
-      <p class="ai-product-showcase-feature-description-{{ ai_gen_id }}">{{ feature.settings.description }}</p>
+      <p class="ai-product-showcase-feature-description">{{ feature.settings.description }}</p>
     {% endif %}
   </div>
 </div>
