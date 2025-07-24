@@ -83,6 +83,8 @@
   .custom-font-size p{
     font-weight: 600;
     font-size: 14px;
+    color: #666;
+
   }
   div[ref="priceContainer"] .price{
     font-weight: 600;
