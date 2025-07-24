@@ -24,6 +24,11 @@
     justify-content: center;
     align-items: center;
  } 
+ .mega-menu__link--parent li{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+ }
   .mega-menu__link img{
     max-width: 100px !important;
   }
