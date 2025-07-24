@@ -93,6 +93,10 @@
     background-color: #ea7a77;
     --button-border-color:#ea7a77;
 }
+.add-to-cart-button:hover {
+    background-color: #ea7a77;
+    --button-border-color:#ea7a77;
+}
 .ui-test-product-list .resource-list__carousel slideshow-slides[gutters="start end"]{
     justify-content: center;
 }
