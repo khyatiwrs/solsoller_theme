@@ -1,6 +1,6 @@
 
 .mega-menu__grid[data-menu-grid-id="MegaMenuList-2"]{  --menu-columns-desktop: 5;
-    --menu-columns-tablet:3
+    --menu-columns-tablet:5
   }
   .menu-list__list-item{
     margin-right: 10px;
