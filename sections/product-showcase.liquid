@@ -1,6 +1,172 @@
+<div class="ai-product-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-product-showcase-container-{{ ai_gen_id }}">
+    <div class="ai-product-showcase-features-left-{{ ai_gen_id }}">
+      {% for feature in block.blocks %}
+        {% if feature.settings.position == 'left' %}
+          {% render 'feature-item', feature: feature, ai_gen_id: ai_gen_id %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-product-showcase-hero-{{ ai_gen_id }}">
+      {% if block.settings.hero_image %}
+        <img
+          src="{{ block.settings.hero_image | image_url: width: 600 }}"
+          alt="{{ block.settings.hero_image.alt | escape }}"
+          class="ai-product-showcase-hero-image-{{ ai_gen_id }}"
+          loading="lazy"
+          width="{{ block.settings.hero_image.width }}"
+          height="{{ block.settings.hero_image.height }}"
+        >
+      {% else %}
+        <div class="ai-product-showcase-hero-placeholder-{{ ai_gen_id }}">
+          {{ 'product-apparel-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-product-showcase-features-right-{{ ai_gen_id }}">
+      {% for feature in block.blocks %}
+        {% if feature.settings.position == 'right' %}
+          {% render 'feature-item', feature: feature, ai_gen_id: ai_gen_id %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Product Showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Product image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "star", "label": "Star" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "check", "label": "Check" },
+            { "value": "zap", "label": "Lightning" },
+            { "value": "award", "label": "Award" }
+          ],
+          "default": "star"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Premium Quality"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Crafted with care and precision."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Showcase",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
 {% endschema %}
