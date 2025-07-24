@@ -25,7 +25,6 @@
   style="--ratio: {{ media.aspect_ratio }}"
   data-media-id="{{ media.id }}"
 >
-<div class="absolute inset-0" data-testid="card-tags" data-entity-name="card-tags"><div class="absolute z-[3] mt-2 px-4 py-1 text-center font-body text-xs font-semibold uppercase" style="background: rgb(193, 47, 39); color: rgb(255, 255, 255);">Best Seller</div></div>
   {% liquid
     assign high_res_url = media.preview_image | image_url: width: 3840
     assign fetch_priority = 'auto'
@@ -131,6 +130,8 @@
     {% endcase %}
   {% endunless %}
 </div>
+<div class="absolute inset-0" data-testid="card-tags" data-entity-name="card-tags"><div class="absolute z-[3] mt-2 px-4 py-1 text-center font-body text-xs font-semibold uppercase" style="background: rgb(193, 47, 39); color: rgb(255, 255, 255);">Best Seller</div></div>
+
 
 {% stylesheet %}
   .product-media {
