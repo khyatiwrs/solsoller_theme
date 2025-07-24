@@ -117,3 +117,12 @@
     border-top-left-radius: 6px;
     border-bottom-right-radius: 6px;
   }
+  .product-card{
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 8px; /* optional: smooth corners */
+  }
+
+  .product-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px); /* subtle lift effect */
+  }
