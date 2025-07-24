@@ -1378,6 +1378,32 @@
     "1753360044ac4b8642": {
       "type": "_blocks",
       "blocks": {
+        "text_MY98rb": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p><strong>Mediterranean Ingredients</strong></p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 20,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "ai_gen_block_a22a70b_fCCJWn": {
           "type": "ai_gen_block_a22a70b",
           "settings": {
@@ -1420,6 +1446,7 @@
         }
       },
       "block_order": [
+        "text_MY98rb",
         "ai_gen_block_a22a70b_fCCJWn"
       ],
       "settings": {
@@ -1453,6 +1480,32 @@
     "1753359407b0490f38": {
       "type": "_blocks",
       "blocks": {
+        "text_iRb8Uc": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p><strong>See Solsoller in Action</strong></p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 20,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "ai_gen_block_983fea7_rqGFCf": {
           "type": "ai_gen_block_983fea7",
           "settings": {
@@ -1504,6 +1557,7 @@
         }
       },
       "block_order": [
+        "text_iRb8Uc",
         "ai_gen_block_983fea7_rqGFCf"
       ],
       "settings": {
