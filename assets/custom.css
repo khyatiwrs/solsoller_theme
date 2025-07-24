@@ -98,7 +98,7 @@
     --button-border-color:#ea7a77;
 }
 .ui-test-product-list .resource-list__carousel slideshow-slides[gutters="start end"]{
-    justify-content: center;
+    /* justify-content: center; */
 }
 [data-testid="card-tags"] {
     position: absolute;
