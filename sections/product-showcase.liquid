@@ -1,34 +1,185 @@
-<div class="ai-product-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-product-showcase-container-{{ ai_gen_id }}">
-    <div class="ai-product-showcase-features-left-{{ ai_gen_id }}">
-      {% for feature in block.blocks %}
+{% style %}
+  .ai-product-showcase {
+    padding: 60px 20px;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .ai-product-showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .ai-product-showcase-features-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: right;
+  }
+
+  .ai-product-showcase-features-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .ai-product-showcase-hero {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .ai-product-showcase-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: {{ section.settings.image_border_radius }}px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-product-showcase-hero-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    border-radius: {{ section.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-product-showcase-hero-placeholder svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.5;
+  }
+
+  .ai-product-showcase-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 300px;
+  }
+
+  .ai-product-showcase-features-left .ai-product-showcase-feature {
+    flex-direction: row-reverse;
+    margin-left: auto;
+  }
+
+  .ai-product-showcase-feature-icon {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    background-color: {{ section.settings.icon_background_color }};
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: {{ section.settings.icon_color }};
+  }
+
+  .ai-product-showcase-feature-icon svg {
+    width: calc({{ section.settings.icon_size }}px * 0.6);
+    height: calc({{ section.settings.icon_size }}px * 0.6);
+  }
+
+  .ai-product-showcase-feature-content {
+    flex-grow: 1;
+  }
+
+  .ai-product-showcase-feature-title {
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: 600;
+    color: {{ section.settings.title_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .ai-product-showcase-feature-description {
+    font-size: {{ section.settings.description_size }}px;
+    color: {{ section.settings.description_color }};
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-product-showcase-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .ai-product-showcase-features-left,
+    .ai-product-showcase-features-right {
+      order: 2;
+      text-align: left;
+    }
+
+    .ai-product-showcase-hero {
+      order: 1;
+    }
+
+    .ai-product-showcase-feature {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .ai-product-showcase-features-left .ai-product-showcase-feature {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-product-showcase {
+      padding: 40px 16px;
+    }
+
+    .ai-product-showcase-container {
+      gap: 30px;
+    }
+
+    .ai-product-showcase-features-left,
+    .ai-product-showcase-features-right {
+      gap: 30px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-product-showcase" {{ section.shopify_attributes }}>
+  <div class="ai-product-showcase-container">
+    <div class="ai-product-showcase-features-left">
+      {% for feature in section.blocks %}
         {% if feature.settings.position == 'left' %}
           {% render 'feature-item', feature: feature, ai_gen_id: ai_gen_id %}
         {% endif %}
       {% endfor %}
     </div>
 
-    <div class="ai-product-showcase-hero-{{ ai_gen_id }}">
-      {% if block.settings.hero_image %}
+    <div class="ai-product-showcase-hero">
+      {% if section.settings.hero_image %}
         <img
-          src="{{ block.settings.hero_image | image_url: width: 600 }}"
-          alt="{{ block.settings.hero_image.alt | escape }}"
-          class="ai-product-showcase-hero-image-{{ ai_gen_id }}"
+          src="{{ section.settings.hero_image | image_url: width: 600 }}"
+          alt="{{ section.settings.hero_image.alt | escape }}"
+          class="ai-product-showcase-hero-image"
           loading="lazy"
-          width="{{ block.settings.hero_image.width }}"
-          height="{{ block.settings.hero_image.height }}"
+          width="{{ section.settings.hero_image.width }}"
+          height="{{ section.settings.hero_image.height }}"
         >
       {% else %}
-        <div class="ai-product-showcase-hero-placeholder-{{ ai_gen_id }}">
+        <div class="ai-product-showcase-hero-placeholder">
           {{ 'product-apparel-1' | placeholder_svg_tag }}
         </div>
       {% endif %}
     </div>
 
-    <div class="ai-product-showcase-features-right-{{ ai_gen_id }}">
-      {% for feature in block.blocks %}
+    <div class="ai-product-showcase-features-right">
+      {% for feature in section.blocks %}
         {% if feature.settings.position == 'right' %}
-          {% render 'feature-item', feature: feature, ai_gen_id: ai_gen_id %}
+          {% render 'feature-item', feature: feature %}
         {% endif %}
       {% endfor %}
     </div>
