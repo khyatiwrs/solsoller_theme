@@ -1486,6 +1486,90 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "1753359407b0490f38": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_983fea7_rqGFCf": {
+          "type": "ai_gen_block_983fea7",
+          "settings": {
+            "background_color": "#ffffff",
+            "section_padding": 40,
+            "card_background": "#ffffff",
+            "card_border_radius": 12,
+            "card_gap": 24,
+            "card_padding": 20,
+            "play_button_color": "#ff0050",
+            "video_badge_color": "#ff0050",
+            "image_badge_color": "#007acc",
+            "title_size": 18,
+            "title_color": "#000000",
+            "description_size": 14,
+            "description_color": "#666666",
+            "stats_size": 12,
+            "stats_color": "#999999",
+            "media_1_enabled": true,
+            "media_1_type": "video",
+            "media_1_title": "Amazing Product Demo",
+            "media_1_description": "Check out this incredible product in action! See all the amazing features and benefits.",
+            "media_1_url": "",
+            "media_1_views": "1.2K",
+            "media_1_likes": "156",
+            "media_2_enabled": true,
+            "media_2_type": "image",
+            "media_2_title": "Behind the Scenes",
+            "media_2_description": "Go behind the scenes and see how our products are made with care and attention to detail.",
+            "media_2_url": "",
+            "media_2_views": "892",
+            "media_2_likes": "89",
+            "media_3_enabled": true,
+            "media_3_type": "video",
+            "media_3_title": "Customer Reviews",
+            "media_3_description": "See what our customers are saying about their experience with our products.",
+            "media_3_url": "",
+            "media_3_views": "2.1K",
+            "media_3_likes": "234",
+            "media_4_enabled": true,
+            "media_4_type": "image",
+            "media_4_title": "Style Guide",
+            "media_4_description": "Learn how to style our products for different occasions and create amazing looks.",
+            "media_4_url": "",
+            "media_4_views": "756",
+            "media_4_likes": "67"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_983fea7_rqGFCf"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -1495,6 +1579,7 @@
     "section_mHCKjj",
     "collection_list_zqYPbq",
     "section_cTUNrX",
-    "17532699668424192b"
+    "17532699668424192b",
+    "1753359407b0490f38"
   ]
 }
