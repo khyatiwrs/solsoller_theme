@@ -1,7 +1,15 @@
-{% assign icon = feature.settings.icon %}
+{% assign icon_size = section.settings.icon_size %}
+{% assign icon_image = feature.settings.icon_image %}
+
 <div class="ai-product-showcase-feature">
-  <div class="ai-product-showcase-feature-icon">
-    {% render 'icon', icon: icon %}
+  <div class="ai-product-showcase-feature-icon" style="width: {{ icon_size }}px; height: {{ icon_size }}px;">
+    {% if icon_image %}
+      <img
+        src="{{ icon_image | image_url: width: icon_size }}"
+        alt="{{ feature.settings.title | escape }}"
+        style="width: 100%; height: 100%; object-fit: contain;"
+      >
+    {% endif %}
   </div>
   <div class="ai-product-showcase-feature-content">
     <h3 class="ai-product-showcase-feature-title">{{ feature.settings.title }}</h3>
