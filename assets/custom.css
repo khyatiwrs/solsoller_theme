@@ -143,5 +143,14 @@
   }
   .collection-card__content .link{
     font-size: 14px;
-    
+  }
+  .collection-card{
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: #fff;
+  }
+  .collection-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
   }
