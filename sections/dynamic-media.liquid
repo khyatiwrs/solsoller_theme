@@ -1,53 +1,63 @@
-{% stylesheet %}
+<section class="dynamic-media-section">
+  <div class="page-width">
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+    <div class="media-blocks">
+      {% for block in section.blocks %}
+        <div class="media-block" {{ block.shopify_attributes }}>
+          {% case block.type %}
+            {% when 'image' %}
+              {% if block.settings.image %}
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="Image" loading="lazy">
+              {% else %}
+                <p>No image uploaded</p>
+              {% endif %}
+            {% when 'video' %}
+              {% if block.settings.video_url %}
+                <video controls>
+                  <source src="{{ block.settings.video_url }}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              {% else %}
+                <p>No video URL provided</p>
+              {% endif %}
+          {% endcase %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
   .dynamic-media-section {
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
+    padding: 40px 0;
     background: #f9f9f9;
   }
 
-  .dynamic-media-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  .dynamic-media-section .section-title {
     text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
   }
 
-  .dynamic-media-item {
-    margin-bottom: 20px;
+  .media-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
   }
 
-  .dynamic-media-item img,
-  .dynamic-media-item video {
-    max-width: 100%;
+  .media-block img,
+  .media-block video {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    display: block;
-    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
-{% endstylesheet %}
 
-<div class="dynamic-media-section">
-  {% if section.settings.section_title != blank %}
-    <h2 class="dynamic-media-title">{{ section.settings.section_title }}</h2>
-  {% endif %}
-
-  {% for block in section.blocks %}
-    <div class="dynamic-media-item">
-      {% if block.type == 'image' %}
-        {% if block.settings.image %}
-          <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="Dynamic image" loading="lazy">
-        {% endif %}
-      {% elsif block.type == 'video' %}
-        {% if block.settings.video_url %}
-          <video controls>
-            <source src="{{ block.settings.video_url }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        {% endif %}
-      {% endif %}
-    </div>
-  {% endfor %}
-</div>
+  .media-block p {
+    text-align: center;
+    color: #999;
+  }
+</style>
 
 {% schema %}
 {
@@ -74,34 +84,26 @@
       ]
     },
     {
-  "type": "video",
-  "name": "Video",
-  "settings": [
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL (MP4)"
+        }
+      ]
     }
-  ]
-}
   ],
   "presets": [
     {
       "name": "Dynamic Media Section",
       "category": "Media",
       "blocks": [
-        {
-          "type": "image"
-        },
-        {
-          "type": "video"
-        },
-        {
-          "type": "image"
-        },
-        {
-          "type": "video"
-        }
+        { "type": "image" },
+        { "type": "video" },
+        { "type": "image" },
+        { "type": "video" }
       ]
     }
   ]
