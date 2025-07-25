@@ -1,6 +1,580 @@
+{% doc %}
+  @prompt
+    Create a flexible video and text section with layout options for left/right positioning. Include a title, descriptive text, and call-to-action button on the text side. Add video controls for autoplay, loop/repeat, and mute options similar to Loom. The section should be responsive and allow merchants to choose whether video appears on left or right side of the text content.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-text-section-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: {{ block.settings.content_gap }}px;
+    padding: {{ block.settings.section_padding }}px 0;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-video-text-section-{{ ai_gen_id }}--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .ai-video-container-{{ ai_gen_id }} {
+    flex: 1;
+    position: relative;
+    border-radius: {{ block.settings.video_border_radius }}px;
+    overflow: hidden;
+    background-color: #000;
+  }
+
+  .ai-video-element-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.video_border_radius }}px;
+  }
+
+  .ai-video-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.video_border_radius }}px;
+  }
+
+  .ai-video-placeholder-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.5;
+  }
+
+  .ai-video-controls-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-video-container-{{ ai_gen_id }}:hover .ai-video-controls-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  .ai-video-control-btn-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-video-control-btn-{{ ai_gen_id }}:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .ai-video-control-btn-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.button_color }};
+  }
+
+  .ai-text-content-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.text_spacing }}px;
+  }
+
+  .ai-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    margin: 0;
+    color: {{ block.settings.title_color }};
+    line-height: 1.2;
+  }
+
+  .ai-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.6;
+    margin: 0;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-cta-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .ai-cta-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    color: {{ block.settings.button_text_color }};
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-video-text-section-{{ ai_gen_id }},
+    .ai-video-text-section-{{ ai_gen_id }}--reverse {
+      flex-direction: column;gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-video-controls-{{ ai_gen_id }} {
+      opacity: 1;
+    }
+  }
+{% endstyle %}
+
+<video-text-section-{{ ai_gen_id }}
+  class="ai-video-text-section-{{ ai_gen_id }} {% if block.settings.layout == 'video_right' %}ai-video-text-section-{{ ai_gen_id }}--reverse{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-video-container-{{ ai_gen_id }}">
+    {% if block.settings.video %}
+      <video
+        class="ai-video-element-{{ ai_gen_id }}"
+        {% if block.settings.autoplay %}autoplay{% endif %}
+        {% if block.settings.loop %}loop{% endif %}
+        {% if block.settings.muted %}muted{% endif %}
+        playsinline
+        preload="metadata"
+      >
+        <source src="{{ block.settings.video }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="ai-video-controls-{{ ai_gen_id }}">
+        <button
+          class="ai-video-control-btn-{{ ai_gen_id }} ai-play-pause-btn-{{ ai_gen_id }}"
+          aria-label="Play/Pause video"
+          data-action="play-pause"
+        ><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="ai-play-icon-{{ ai_gen_id }}">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="ai-pause-icon-{{ ai_gen_id }}" style="display: none;">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+
+        <button
+          class="ai-video-control-btn-{{ ai_gen_id }} ai-mute-btn-{{ ai_gen_id }} {% if block.settings.muted %}active{% endif %}"
+          aria-label="Mute/Unmute video"
+          data-action="mute"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="ai-volume-icon-{{ ai_gen_id }}">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+          </svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="ai-mute-icon-{{ ai_gen_id }}" style="display: none;">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+          </svg>
+        </button>
+
+        <button
+          class="ai-video-control-btn-{{ ai_gen_id }} ai-loop-btn-{{ ai_gen_id }} {% if block.settings.loop %}active{% endif %}"
+          aria-label="Toggle loop"
+          data-action="loop"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+          </svg>
+        </button>
+      </div>
+    {% else %}
+      <div class="ai-video-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-text-content-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+      <a href="{{ block.settings.button_url }}" class="ai-cta-button-{{ ai_gen_id }}">
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</video-text-section-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoTextSection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.video = this.querySelector('.ai-video-element-{{ ai_gen_id }}');
+        this.playPauseBtn = this.querySelector('.ai-play-pause-btn-{{ ai_gen_id }}');
+        this.muteBtn = this.querySelector('.ai-mute-btn-{{ ai_gen_id }}');
+        this.loopBtn = this.querySelector('.ai-loop-btn-{{ ai_gen_id }}');
+
+        if (this.video) {
+          this.setupEventListeners();
+          this.updatePlayPauseIcon();
+          this.updateMuteIcon();
+        }
+      }
+
+      setupEventListeners() {
+        this.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+        this.muteBtn.addEventListener('click', () => this.toggleMute());
+        this.loopBtn.addEventListener('click', () => this.toggleLoop());
+
+        this.video.addEventListener('play', () => this.updatePlayPauseIcon());
+        this.video.addEventListener('pause', () => this.updatePlayPauseIcon());
+        this.video.addEventListener('volumechange', () => this.updateMuteIcon());
+      }
+
+      togglePlayPause() {
+        if (this.video.paused) {
+          this.video.play();
+        } else {
+          this.video.pause();
+        }
+      }
+
+      toggleMute() {
+        this.video.muted = !this.video.muted;
+        this.muteBtn.classList.toggle('active', this.video.muted);
+      }
+
+      toggleLoop() {
+        this.video.loop = !this.video.loop;
+        this.loopBtn.classList.toggle('active', this.video.loop);
+      }
+
+      updatePlayPauseIcon() {
+        const playIcon = this.querySelector('.ai-play-icon-{{ ai_gen_id }}');
+        const pauseIcon = this.querySelector('.ai-pause-icon-{{ ai_gen_id }}');
+
+        if (this.video.paused) {
+          playIcon.style.display = 'block';
+          pauseIcon.style.display = 'none';
+        } else {
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'block';
+        }
+      }
+
+      updateMuteIcon() {
+        const volumeIcon = this.querySelector('.ai-volume-icon-{{ ai_gen_id }}');
+        const muteIcon = this.querySelector('.ai-mute-icon-{{ ai_gen_id }}');
+
+        if (this.video.muted) {
+          volumeIcon.style.display = 'none';
+          muteIcon.style.display = 'block';
+        } else {
+          volumeIcon.style.display = 'block';
+          muteIcon.style.display = 'none';
+        }
+      }
+    }
+
+    customElements.define('video-text-section-{{ ai_gen_id }}', VideoTextSection{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Video & Text Section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Video position",
+      "options": [
+        {
+          "value": "video_left",
+          "label": "Video on left"
+        },
+        {
+          "value": "video_right",
+          "label": "Video on right"
+        }
+      ],
+      "default": "video_left"
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Content gap",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile gap",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video file"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay video",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop video",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "muted",
+      "label": "Mute video",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "video_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Video border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover Our Story"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Watch this video to learn more about our mission, values, and the passion that drives everything we do.</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Text spacing",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Button Style"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button vertical padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Button horizontal padding",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video & Text Section"
+    }
+  ]
+}
 {% endschema %}
