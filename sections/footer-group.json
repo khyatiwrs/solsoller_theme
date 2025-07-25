@@ -117,7 +117,7 @@
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
-                    "menu": "",
+                    "menu": "about",
                     "heading": "ABOUT",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
@@ -138,7 +138,7 @@
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
-                    "menu": "",
+                    "menu": "shop-1",
                     "heading": "SHOP",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
