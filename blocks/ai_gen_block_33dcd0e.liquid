@@ -1,7 +1,8 @@
 {% doc %}
   @prompt
-    Create a rich text section with a customizable heading, description text, and dynamic button. The section should allow merchants to edit the heading text, description content, and button text/link through the theme customizer. Include styling options for text alignment and button appearance.
-
+  Create a rich text section with a customizable heading, description text, and dynamic button. The section should allow
+  merchants to edit the heading text, description content, and button text/link through the theme customizer. Include
+  styling options for text alignment and button appearance.
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
@@ -23,6 +24,7 @@
     font-size: {{ block.settings.heading_size }}px;
     margin: 0 0 {{ block.settings.heading_spacing }}px 0;
     line-height: 1.2;
+    font-weight:bold;
   }
 
   .ai-rich-text-description-{{ ai_gen_id }} {
