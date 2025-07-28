@@ -1,7 +1,8 @@
 {% doc %}
   @prompt
-    Create an interactive video section with clickable video thumbnails that play when clicked, a customizable heading title with paragraph text input, and position settings (left, center, right) for the heading alignment, i went to select video not from url, why video not show in preview, video not working that previre video not play why
-
+  Create an interactive video section with clickable video thumbnails that play when clicked, a customizable heading
+  title with paragraph text input, and position settings (left, center, right) for the heading alignment, i went to
+  select video not from url, why video not show in preview, video not working that previre video not play why
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
@@ -39,6 +40,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
+    height:350px;
   }
 
   .ai-video-section__video-item-{{ ai_gen_id }} {
@@ -58,7 +60,7 @@
   .ai-video-section__thumbnail-{{ ai_gen_id }} {
     position: relative;
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 9/9;
     overflow: hidden;
   }
 
@@ -269,7 +271,7 @@
           assign video_key = 'video_' | append: i
           assign thumbnail_key = 'thumbnail_' | append: i
           assign title_key = 'video_title_' | append: i
-          
+
           assign video_file = block.settings[video_key]
           assign thumbnail = block.settings[thumbnail_key]
           assign video_title = block.settings[title_key]
@@ -278,7 +280,10 @@
         <div
           class="ai-video-section__video-item-{{ ai_gen_id }}"
           data-video-index="{{ i }}"
-          {% if video_file %}tabindex="0" role="button" aria-label="Play video{% if video_title != blank %}: {{ video_title | escape }}{% endif %}"{% endif %}
+          {% if video_file %}
+            tabindex="0" role="button"
+            aria-label="Play video{% if video_title != blank %}: {{ video_title | escape }}{% endif %}"
+          {% endif %}
         >
           <div class="ai-video-section__thumbnail-{{ ai_gen_id }}">
             {% if video_file %}
@@ -411,7 +416,7 @@
       setupEventListeners() {
         this.videoItems.forEach((item, index) => {
           const playButton = item.querySelector('.ai-video-section__play-button-{{ ai_gen_id }}');
-          
+
           if (playButton && this.videoData[index]) {
             playButton.addEventListener('click', (e) => {
               e.preventDefault();
@@ -460,7 +465,7 @@
         }
 
         this.modalVideo.innerHTML = '';
-        
+
         videoData.sources.forEach(source => {
           const sourceElement = document.createElement('source');
           sourceElement.src = source.url;
@@ -472,7 +477,7 @@
         this.modal.classList.add('active');
         this.modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-        
+
         this.modalVideo.play().catch(error => {
           console.error('Error playing video:', error);
         });
@@ -483,7 +488,7 @@
         this.modal.setAttribute('aria-hidden', 'true');
         this.modalVideo.pause();
         this.modalVideo.currentTime = 0;
-        
+
         document.body.style.overflow = '';
       }
     }
