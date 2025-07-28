@@ -1821,9 +1821,9 @@
         "ai_gen_block_fb9df03_byBg89": {
           "type": "ai_gen_block_fb9df03",
           "settings": {
-            "heading": "Featured Videos",
+            "heading": "Squatch Nation Has Spoken",
             "description": "Discover our latest video content",
-            "heading_alignment": "center",
+            "heading_alignment": "left",
             "video_1": "shopify://files/videos/Mandarin Magic.MP4",
             "video_title_1": "",
             "video_2": "shopify://files/videos/Pink Mist.MP4",
